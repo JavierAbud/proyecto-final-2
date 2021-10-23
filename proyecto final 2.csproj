@@ -6,4 +6,8 @@
     <RootNamespace>proyecto_final_2</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Entrada de productos.cs" />
+  </ItemGroup>
+
 </Project>
