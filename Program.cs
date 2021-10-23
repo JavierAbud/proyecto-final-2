@@ -10,6 +10,7 @@ namespace proyecto_final_2
             Int32 platanos = 25, yuca = 30, guineo = 5, papa = 25, cebolla = 5;
             Int32 jugo = 25, soda = 15, gatorade = 60, maltamorena = 50, cerveza = 50;
             Int32 sal = 10, pimienta = 10, azucar = 15, oregano = 5, salsa = 20;
+            Int32 aguacate = 60, manzana = 15, zandia = 80, lechoza = 70, pera = 10;
             Int32 total = 0;
 
 
@@ -19,7 +20,7 @@ namespace proyecto_final_2
 
 
         //punto de venta
-        inicio:
+            inicio:
             Console.Clear();
             Console.WriteLine("");
             Console.WriteLine("Seleccione el tipo de producto que desa adquirir");
@@ -32,12 +33,16 @@ namespace proyecto_final_2
             Console.Write("4- Frutas   ");
             Console.WriteLine("");
             Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
             Console.WriteLine("  El total de su compra es: " + total);
+            Console.WriteLine("");
+            Console.WriteLine("");
 
             byte y = Convert.ToByte(Console.ReadLine());
             if (y == 1)
             {
-            inicio1:
+                inicio1:
                 Console.Clear();
                 Console.WriteLine("1-   Platanos   " + platanos);
                 Console.WriteLine("2-   Yuca   " + yuca);
@@ -45,6 +50,8 @@ namespace proyecto_final_2
                 Console.WriteLine("4-   Papa   " + papa);
                 Console.WriteLine("5-   Cebolla   " + cebolla);
                 Console.WriteLine("6-   Regresar al menu principal   ");
+                Console.WriteLine("");
+                Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("  El total de su compra es: " + total);
@@ -83,7 +90,7 @@ namespace proyecto_final_2
 
             else if (y == 2)
             {
-            inicio2:
+                inicio2:
                 Console.Clear();
                 Console.WriteLine("1-   Jugo   " + jugo);
                 Console.WriteLine("2-   Soda   " + soda);
@@ -91,6 +98,8 @@ namespace proyecto_final_2
                 Console.WriteLine("4-   Malta Morena   " + maltamorena);
                 Console.WriteLine("5-   Cerbeza   " + cerveza);
                 Console.WriteLine("6-   Regresar al menu principal   ");
+                Console.WriteLine("");
+                Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("  El total de su compra es: " + total);
@@ -129,7 +138,7 @@ namespace proyecto_final_2
 
             else if (y == 3)
             {
-            inicio3:
+                inicio3:
                 Console.Clear();
                 Console.WriteLine("1-   Sal   " + sal);
                 Console.WriteLine("2-   Pimienta   " + pimienta);
@@ -137,6 +146,8 @@ namespace proyecto_final_2
                 Console.WriteLine("4-   Oregano   " + oregano);
                 Console.WriteLine("5-   Salsa   " + salsa);
                 Console.WriteLine("6-   Regresar al menu principal   ");
+                Console.WriteLine("");
+                Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("  El total de su compra es: " + total);
@@ -173,7 +184,56 @@ namespace proyecto_final_2
                 }
 
             }
-                    Console.WriteLine("");
+            else
+            {
+            inicio4:
+                Console.Clear();
+                Console.WriteLine("1-   Aguacate   " + aguacate);
+                Console.WriteLine("2-   Lechoza   " + lechoza);
+                Console.WriteLine("3-   Zandia   " + zandia);
+                Console.WriteLine("4-   Manzana   " + manzana);
+                Console.WriteLine("5-   Pera   " + pera);
+                Console.WriteLine("6-   Regresar al menu principal   ");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("  El total de su compra es: " + total);
+                Console.WriteLine("");
+                Console.WriteLine("");
+
+                byte c = Convert.ToByte(Console.ReadLine());
+                switch (c)
+                {
+                    case 1:
+                        Console.WriteLine("   Aguacate   " + aguacate);
+                        total = total + aguacate;
+                        goto inicio4;
+                    case 2:
+                        Console.WriteLine("   Lechoza   " + lechoza);
+                        total = total + lechoza;
+                        goto inicio4;
+                    case 3:
+                        Console.WriteLine("   Zandia   " + zandia);
+                        total = total + zandia;
+                        goto inicio4;
+                    case 4:
+                        Console.WriteLine("   Manzana   " + manzana);
+                        total = total + manzana;
+                        goto inicio4;
+                    case 5:
+                        Console.WriteLine("   Pera   " + pera);
+                        total = total + pera;
+                        goto inicio4;
+                    case 6:
+                        Console.WriteLine("   Regresar al menu principal   ");
+                        goto inicio;
+
+                }
+
+            }
+
+            Console.WriteLine("");
                 Console.ReadKey();
             }
         }
