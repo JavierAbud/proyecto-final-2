@@ -7,15 +7,26 @@ namespace proyecto_final_2
 {
     class Entrada
     {
-        Int32 platanos = 25, yuca = 30, guineo = 5, papa = 25, cebolla = 5;
-        Int32 jugo = 25, soda = 15, gatorade = 60, maltamorena = 50, cerveza = 50;
-        Int32 sal = 10, pimienta = 10, azucar = 15, oregano = 5, salsa = 20;
+        /* Viveres */     Int32 platanos = 25, yuca = 30, guineo = 5, papa = 25, cebolla = 5;
+        /* Bebidas */     Int32 jugo = 25, soda = 15, gatorade = 60, maltamorena = 50, cerveza = 50;
+        /* Frutas */      Int32 manzana = 15, banana = 20, sandia = 25, piña = 15, fresa = 5;
+        /* Condimentos */ Int32 sal = 10, pimienta = 10, azucar = 15, oregano = 5, salsa = 20;
         Int32 total = 0;
+
+        /* cantViveres */     int cantPlatanos = 0, cantYuca = 0, cantGuineo = 0, cantPapa = 0, cantCebolla = 0;
+        /* cantBebidas */     int cantJugo = 0, cantSoda = 0, cantGatorade = 0, cantMaltamorena = 0, cantCerveza = 0;
+        /* cantFrutas */      int cantManzana = 0, cantBanana = 0, cantSandia = 0, cantPiña = 0, cantFresa = 0;
+        /* cantCondimentos */ int cantSal = 0, cantPimienta = 0, cantAzucar = 0, cantOregano = 0, cantSalsa = 0;
+        int cantTotal = 0;
+
+
+
+
+
         public void Start()
         {
             Title = "Colmado";
-            RunMainMenu();
-        
+            RunMainMenu();        
         }
 
         //Menu principal
@@ -23,18 +34,19 @@ namespace proyecto_final_2
         {
 
             string Prompt = @" 
- _____       _                     _       
-/  __ \     | |                   | |      
-| /  \/ ___ | |_ __ ___   __ _  __| | ___  
-| |    / _ \| | '_ ` _ \ / _` |/ _` |/ _ \ 
-| \__/\ (_) | | | | | | | (_| | (_| | (_) |
- \____/\___/|_|_| |_| |_|\__,_|\__,_|\___/ 
-                                           
+
+ ██████╗ ██████╗ ██╗     ███╗   ███╗ █████╗ ██████╗  ██████╗ 
+██╔════╝██╔═══██╗██║     ████╗ ████║██╔══██╗██╔══██╗██╔═══██╗
+██║     ██║   ██║██║     ██╔████╔██║███████║██║  ██║██║   ██║
+██║     ██║   ██║██║     ██║╚██╔╝██║██╔══██║██║  ██║██║   ██║
+╚██████╗╚██████╔╝███████╗██║ ╚═╝ ██║██║  ██║██████╔╝╚██████╔╝
+ ╚═════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝ 
+                                                             
                                           
 Bienvenido a nuestro colmado, Como podemos ayudarle?
 (Use las teclas de direccion para navegar por el menu y selecciona con la tecla Enter.)
 ";
-            string[] Options = { "Comprar" , "Salir" };
+            string[] Options = { "COMPRAR" , "SALIR" };
              
             Menu MainMenu = new Menu(Prompt, Options);
             int SelectedIndex = MainMenu.Run();
@@ -52,10 +64,11 @@ Bienvenido a nuestro colmado, Como podemos ayudarle?
             }
 
         }
-        //Menu de productos
-        public void RunProductos()
-        {
 
+
+        //Menu clasificacion
+        public void RunClasificacion()
+        {
             string Prompt = @" 
 
   _____               _            _            
@@ -63,139 +76,364 @@ Bienvenido a nuestro colmado, Como podemos ayudarle?
  | |__) | __ ___   __| |_   _  ___| |_ ___  ___ 
  |  ___/ '__/ _ \ / _` | | | |/ __| __/ _ \/ __|
  | |   | | | (_) | (_| | |_| | (__| || (_) \__ \
- |_|   |_|  \___/ \__,_|\__,_|\___|\__\___/|___/
-                                                
+ |_|   |_|  \___/ \__,_|\__,_|\___|\__\___/|___/                                                
                                                 
                                            
-Estos son nuestros productos, que desea comprar?
-(Use las teclas de direccion para navegar por el menu y selecciona con la tecla Enter.)
+Estos son nuestros productos, que desea comprar?";
 
-El total de su compra es: 
-"+ total
+            string[] Options = { "Víveres", "Bebidas", "Condimentos", "Frutas", "* Volver al menu principal *" };
 
-
-;
-        
-
-            string[] Options = { "platanos = 25", "yuca = 30", "guineo = 5", "papa = 25", "cebolla = 5", "jugo = 25", "soda = 15", " gatorade = 60", " maltamorena = 50", " cerveza = 50 ", "sal = 10", " pimienta = 10", " azucar = 15", " oregano = 5", "salsa = 20","","Volver al menu principal"};
-
-
-
-            Productos MenudeProductos = new Productos(Prompt, Options);
-            int SelectedIndex = MenudeProductos.RunProducts();
+            Clasificacion MenuDeClasificacion = new Clasificacion(Prompt, Options);
+            int SelectedIndex = MenuDeClasificacion.RunClasificacion();
 
             switch (SelectedIndex)
             {
                 case 0:
-
-                    total = total + platanos;
-                    RunProductos();
+                    Viveres();
                     break;
-                    
-                    RunProductos();
                 case 1:
-
-                    total = total + yuca;
-                    RunProductos();
+                    Bebidas();
                     break;
                 case 2:
-
-                    total = total + guineo;
-                    RunProductos();
+                    Condimentos();
                     break;
                 case 3:
-
-                    total = total + papa;
-                    RunProductos();
+                    Frutas();
                     break;
                 case 4:
+                    RunMainMenu();
+                    break;
+                    
+                default:
+                    break;
+            }
 
-                    total = total + cebolla;
-                    RunProductos();
+        }
+
+        //Menu de productos viveres
+        public void RunViveres()
+        {
+
+            string Prompt = @" 
+ __     ___                         
+ \ \   / (_)_   _____ _ __ ___  ___ 
+  \ \ / /| \ \ / / _ \ '__/ _ \/ __|
+   \ V / | |\ V /  __/ | |  __/\__ \
+    \_/  |_| \_/ \___|_|  \___||___/                                    
+                                                
+                                           
+Estos son nuestros víveres, que desea comprar?
+
+El total de su compra es: $" + total;
+
+            Console.WriteLine("");
+
+            string[] Options = { "Platanos = $25", "Yuca = $30", "Guineo = $5", "Papa = $25", "Cebolla = $5", "* Volver al menu de clasificaciones *" };
+
+            Viveres MenuDeViveres = new Viveres(Prompt, Options);
+            int SelectedIndex = MenuDeViveres.RunViveres();
+
+            switch (SelectedIndex)
+            {
+                case 0:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de platanos que desea: ");
+                    cantPlatanos = Convert.ToInt32(Console.ReadLine());
+                    total = total + (platanos * cantPlatanos);
+                    RunViveres();                    
+                    break;                    
+                   
+                case 1:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de yuca que desea: ");
+                    cantYuca = Convert.ToInt32(Console.ReadLine());
+                    total = total + (yuca * cantYuca);
+                    RunViveres();
+                    break;
+
+                case 2:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de guineos que desea: ");
+                    cantGuineo = Convert.ToInt32(Console.ReadLine());
+                    total = total + (guineo * cantGuineo);
+                    RunViveres();
+                    break;
+
+                case 3:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de papas que desea: ");
+                    cantPapa = Convert.ToInt32(Console.ReadLine());
+                    total = total + (papa * cantPapa);
+                    RunViveres();
+                    break;
+
+                case 4:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de cebollas que desea: ");
+                    cantCebolla = Convert.ToInt32(Console.ReadLine());
+                    total = total + (cebolla * cantCebolla);
+                    RunViveres();
                     break;
 
                 case 5:
-
-                    total = total + jugo;
-                    RunProductos();
+                    RunClasificacion();
                     break;
 
-                case 6:
+                default:
+                    break;
+            }
+            
+        }
 
-                    total = total + soda;
-                    RunProductos();
+        public void RunBebidas()
+        {
+            string Prompt = @"
+  ____       _     _     _           
+ | __ )  ___| |__ (_) __| | __ _ ___ 
+ |  _ \ / _ \ '_ \| |/ _` |/ _` / __|
+ | |_) |  __/ |_) | | (_| | (_| \__ \
+ |____/ \___|_.__/|_|\__,_|\__,_|___/
+                                     
+
+Estos son nuestras bebidas, que desea comprar?
+
+El total de su compra es: $" + total;
+
+            Console.WriteLine("");
+
+            string[] Options = { "Jugo = $25", "Soda = $15", "Gatorade = $60", "Maltamorena = $50", "Cerveza = $50", "* Volver al menu de clasificaciones *"};
+
+            Bebidas MenuDeBebidas = new Bebidas(Prompt, Options);
+            int SelectedIndex = MenuDeBebidas.RunBebidas();
+
+            switch (SelectedIndex)
+            {
+                case 0:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de jugos que desea: ");
+                    cantJugo = Convert.ToInt32(Console.ReadLine());
+                    total = total + (jugo * cantJugo);
+                    RunBebidas();
                     break;
 
-                case 7:
-
-                    total = total + gatorade;
-                    RunProductos();
+                case 1:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de sodas que desea: ");
+                    cantSoda = Convert.ToInt32(Console.ReadLine());
+                    total = total + (soda * cantSoda);
+                    RunBebidas();
                     break;
 
-                case 8:
+                case 2:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de gatorades que desea: ");
+                    cantGatorade = Convert.ToInt32(Console.ReadLine());
+                    total = total + (gatorade * cantGatorade);
+                    RunBebidas();
+                    break;
 
-                    total = total + maltamorena;
-                    RunProductos();
+                case 3:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de maltamorenas que desea: ");
+                    cantMaltamorena = Convert.ToInt32(Console.ReadLine());
+                    total = total + (maltamorena * cantMaltamorena); RunBebidas();
                     break;
                     ;
-                case 9:
-
-                    total = total + cerveza;
-                    RunProductos();
+                case 4:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de cervezas que desea: ");
+                    cantCerveza = Convert.ToInt32(Console.ReadLine());
+                    total = total + (cerveza * cantCerveza);
+                    RunBebidas();
                     break;
 
-                case 10:
-                    total = total + sal;
-                    RunProductos();
+                case 5:                    
+                    RunClasificacion();
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
 
-                    break;
-                case 11:
-                    total = total + pimienta;
-                    RunProductos();
+        public void RunCondimentos()
+        {
+            string Prompt = @"
+   ____                _ _                      _            
+  / ___|___  _ __   __| (_)_ __ ___   ___ _ __ | |_ ___  ___ 
+ | |   / _ \| '_ \ / _` | | '_ ` _ \ / _ \ '_ \| __/ _ \/ __|
+ | |__| (_) | | | | (_| | | | | | | |  __/ | | | || (_) \__ \
+  \____\___/|_| |_|\__,_|_|_| |_| |_|\___|_| |_|\__\___/|___/
 
+
+Estos son nuestras condimentos, que desea comprar?
+
+El total de su compra es: $" + total;
+
+            Console.WriteLine("");
+
+            string[] Options = { "Sal = $10", "Pimienta = $10", "Azucar = $15", "Oregano = $5", "Salsa = $20", "* Volver al menu de clasificaciones *" };
+
+            Frutas MenuDeFrutas = new Frutas(Prompt, Options);
+            int SelectedIndex = MenuDeFrutas.RunFrutas();
+
+            switch (SelectedIndex)
+            {
+                case 0:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de sales que desea: ");
+                    cantSal = Convert.ToInt32(Console.ReadLine());
+                    total = total + (sal * cantSal);
+                    RunCondimentos();
                     break;
 
-                case 12:
-                    total = total + azucar;
-                    RunProductos();
-
-                    break;
-                case 13:
-                    total = total + oregano;
-                    RunProductos();
-
-                    break;
-                case 14:
-                    total = total + salsa;
-                    RunProductos();
-                    break;
-                case 15:
-                    RunProductos();
+                case 1:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de pimientas que desea: ");
+                    cantPimienta = Convert.ToInt32(Console.ReadLine());
+                    total = total + (pimienta * cantPimienta);
+                    RunCondimentos();
                     break;
 
+                case 2:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de azucares que desea: ");
+                    cantAzucar = Convert.ToInt32(Console.ReadLine());
+                    total = total + (azucar * cantAzucar);
+                    RunCondimentos();
                     break;
-                case 16:
-                    RunMainMenu();
+
+                case 3:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de oreganos que desea: ");
+                    cantOregano = Convert.ToInt32(Console.ReadLine());
+                    total = total + (oregano * cantOregano);
+                    RunCondimentos();
+                    break;
+                    
+                case 4:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de salsas que desea: ");
+                    cantSalsa = Convert.ToInt32(Console.ReadLine());
+                    total = total + (salsa * cantSalsa);
+                    RunCondimentos();
+                    break;
+
+                case 5:
+                    RunClasificacion();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        public void RunFrutas()
+        {
+            string Prompt = @"
+  _____           _            
+ |  ___| __ _   _| |_ __ _ ___ 
+ | |_ | '__| | | | __/ _` / __|
+ |  _|| |  | |_| | || (_| \__ \
+ |_|  |_|   \__,_|\__\__,_|___/
+
+
+Estos son nuestros frutas, que desea comprar?
+
+El total de su compra es: $" + total;
+
+            Console.WriteLine("");
+
+            string[] Options = { "Manzana = $15", "Banana = $20", "Sandía = $25", "Piña = $15", "Fresa = $5", "* Volver al menu de clasificaciones *"};
+
+            Frutas MenuDeFrutas = new Frutas(Prompt, Options);
+            int SelectedIndex = MenuDeFrutas.RunFrutas();
+
+            switch (SelectedIndex)
+            {
+                case 0:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de mazanas que desea: ");
+                    cantManzana = Convert.ToInt32(Console.ReadLine());
+                    total = total + (manzana * cantManzana);
+                    RunFrutas();
+                    break;
+
+                case 1:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de bananas que desea: ");
+                    cantBanana = Convert.ToInt32(Console.ReadLine());
+                    total = total + (banana * cantBanana);
+                    RunFrutas();
+                    break;
+
+                case 2:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de sandías que desea: ");
+                    cantSandia = Convert.ToInt32(Console.ReadLine());
+                    total = total + (sandia * cantSandia);
+                    RunFrutas();
+                    break;
+
+                case 3:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de piñas que desea: ");
+                    cantPiña = Convert.ToInt32(Console.ReadLine());
+                    total = total + (piña * cantPiña);
+                    RunFrutas();
+                    break;
+                    
+                case 4:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese la cantidad de fresas que desea: ");
+                    cantFresa = Convert.ToInt32(Console.ReadLine());
+                    total = total + (fresa * cantFresa);
+                    RunFrutas();
+                    break;
+
+                case 5:
+                    RunClasificacion();
+                    break;
+
+                default:
                     break;
             }
         }
 
 
-        private void Salir()
-        {
-            WriteLine("Pulsa cualquier tecla para salir...");
-                ReadKey(true);
-            Environment.Exit(0);
-        
-        
-        }
 
         private void Comprar()
         {
-            RunProductos();
+            RunClasificacion();
+        }        
+
+        private void Salir()
+        {
+            WriteLine("Pulsa cualquier tecla para salir...");
+            ReadKey(true);
+            Environment.Exit(0);
         }
 
-  
+        private void Viveres()
+        {
+            RunViveres();
+        }
+
+        private void Bebidas()
+        {
+            RunBebidas();
+        }
+
+        private void Condimentos()
+        {
+            RunCondimentos();
+        }
+
+        private void Frutas()
+        {
+            RunFrutas();
+        }
+
     }
 
 

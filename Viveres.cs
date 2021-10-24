@@ -5,13 +5,13 @@ using static System.Console;
 
 namespace proyecto_final_2
 {
-    class Menu
+    class Viveres
     {
         private int SelectedIndex;
         private string[] Options;
         private string Prompt;
 
-        public Menu(string prompt, string[] options)
+        public Viveres(string prompt, string[] options)
         {
             Prompt = prompt;
             Options = options;
@@ -39,13 +39,13 @@ namespace proyecto_final_2
                     ForegroundColor = ConsoleColor.White;
                     BackgroundColor = ConsoleColor.Black;
                 }
-                Console.WriteLine($"{prefix} {CurrentOption} ");
+                Console.WriteLine($"{prefix} {CurrentOption}");
             }
             ResetColor();
 
         }
 
-        public int Run()
+        public int RunViveres()
         {
             ConsoleKey KeyPressed;
             do
