@@ -7,17 +7,27 @@ namespace proyecto_final_2
 {
     class Entrada
     {
-        /* Viveres */     Int32 platanos = 25, yuca = 30, guineo = 5, papa = 25, cebolla = 5;
-        /* Bebidas */     Int32 jugo = 25, soda = 15, gatorade = 60, maltamorena = 50, cerveza = 50;
-        /* Frutas */      Int32 manzana = 15, banana = 20, sandia = 25, piña = 15, fresa = 5;
-        /* Condimentos */ Int32 sal = 10, pimienta = 10, azucar = 15, oregano = 5, salsa = 20;
+        /* Viveres */
+        Int32 platanos = 25, yuca = 30, guineo = 5, papa = 25, cebolla = 5;
+        /* Bebidas */
+        Int32 jugo = 25, soda = 15, gatorade = 60, maltamorena = 50, cerveza = 50;
+        /* Frutas */
+        Int32 manzana = 15, banana = 20, sandia = 25, piña = 15, fresa = 5;
+        /* Condimentos */
+        Int32 sal = 10, pimienta = 10, azucar = 15, oregano = 5, salsa = 20;
         Int32 total = 0;
 
-        /* cantViveres */     int cantPlatanos = 0, cantYuca = 0, cantGuineo = 0, cantPapa = 0, cantCebolla = 0;
-        /* cantBebidas */     int cantJugo = 0, cantSoda = 0, cantGatorade = 0, cantMaltamorena = 0, cantCerveza = 0;
-        /* cantFrutas */      int cantManzana = 0, cantBanana = 0, cantSandia = 0, cantPiña = 0, cantFresa = 0;
-        /* cantCondimentos */ int cantSal = 0, cantPimienta = 0, cantAzucar = 0, cantOregano = 0, cantSalsa = 0;
+        /* cantViveres */
+        int cantPlatanos = 0, cantYuca = 0, cantGuineo = 0, cantPapa = 0, cantCebolla = 0;
+        /* cantBebidas */
+        int cantJugo = 0, cantSoda = 0, cantGatorade = 0, cantMaltamorena = 0, cantCerveza = 0;
+        /* cantFrutas */
+        int cantManzana = 0, cantBanana = 0, cantSandia = 0, cantPiña = 0, cantFresa = 0;
+        /* cantCondimentos */
+        int cantSal = 0, cantPimienta = 0, cantAzucar = 0, cantOregano = 0, cantSalsa = 0;
         int cantTotal = 0;
+
+        
 
 
 
@@ -26,7 +36,7 @@ namespace proyecto_final_2
         public void Start()
         {
             Title = "Colmado";
-            RunMainMenu();        
+            RunMainMenu();
         }
 
         //Menu principal
@@ -46,8 +56,8 @@ namespace proyecto_final_2
 Bienvenido a nuestro colmado, Como podemos ayudarle?
 (Use las teclas de direccion para navegar por el menu y selecciona con la tecla Enter.)
 ";
-            string[] Options = { "COMPRAR" , "SALIR" };
-             
+            string[] Options = { "COMPRAR", "SALIR","Pagar" };
+
             Menu MainMenu = new Menu(Prompt, Options);
             int SelectedIndex = MainMenu.Run();
 
@@ -58,6 +68,10 @@ Bienvenido a nuestro colmado, Como podemos ayudarle?
                     break;
                 case 1:
                     Salir();
+                    break;
+
+                case 2:
+                    Factura();
                     break;
                 default:
                     break;
@@ -103,7 +117,7 @@ Estos son nuestros productos, que desea comprar?";
                 case 4:
                     RunMainMenu();
                     break;
-                    
+
                 default:
                     break;
             }
@@ -140,9 +154,9 @@ El total de su compra es: $" + total;
                     Console.WriteLine("Ingrese la cantidad de platanos que desea: ");
                     cantPlatanos = Convert.ToInt32(Console.ReadLine());
                     total = total + (platanos * cantPlatanos);
-                    RunViveres();                    
-                    break;                    
-                   
+                    RunViveres();
+                    break;
+
                 case 1:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de yuca que desea: ");
@@ -182,7 +196,7 @@ El total de su compra es: $" + total;
                 default:
                     break;
             }
-            
+
         }
 
         public void RunBebidas()
@@ -201,7 +215,7 @@ El total de su compra es: $" + total;
 
             Console.WriteLine("");
 
-            string[] Options = { "Jugo = $25", "Soda = $15", "Gatorade = $60", "Maltamorena = $50", "Cerveza = $50", "* Volver al menu de clasificaciones *"};
+            string[] Options = { "Jugo = $25", "Soda = $15", "Gatorade = $60", "Maltamorena = $50", "Cerveza = $50", "* Volver al menu de clasificaciones *" };
 
             Bebidas MenuDeBebidas = new Bebidas(Prompt, Options);
             int SelectedIndex = MenuDeBebidas.RunBebidas();
@@ -247,10 +261,10 @@ El total de su compra es: $" + total;
                     RunBebidas();
                     break;
 
-                case 5:                    
+                case 5:
                     RunClasificacion();
                     break;
-                    
+
                 default:
                     break;
             }
@@ -310,7 +324,7 @@ El total de su compra es: $" + total;
                     total = total + (oregano * cantOregano);
                     RunCondimentos();
                     break;
-                    
+
                 case 4:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de salsas que desea: ");
@@ -344,7 +358,7 @@ El total de su compra es: $" + total;
 
             Console.WriteLine("");
 
-            string[] Options = { "Manzana = $15", "Banana = $20", "Sandía = $25", "Piña = $15", "Fresa = $5", "* Volver al menu de clasificaciones *"};
+            string[] Options = { "Manzana = $15", "Banana = $20", "Sandía = $25", "Piña = $15", "Fresa = $5", "* Volver al menu de clasificaciones *" };
 
             Frutas MenuDeFrutas = new Frutas(Prompt, Options);
             int SelectedIndex = MenuDeFrutas.RunFrutas();
@@ -382,7 +396,7 @@ El total de su compra es: $" + total;
                     total = total + (piña * cantPiña);
                     RunFrutas();
                     break;
-                    
+
                 case 4:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de fresas que desea: ");
@@ -405,7 +419,7 @@ El total de su compra es: $" + total;
         private void Comprar()
         {
             RunClasificacion();
-        }        
+        }
 
         private void Salir()
         {
@@ -433,6 +447,94 @@ El total de su compra es: $" + total;
         {
             RunFrutas();
         }
+
+
+        private void Factura()
+        {
+            Clear();
+            if (cantPlatanos != 0)
+            {
+
+              WriteLine("Platanos 25$   ");
+            }
+
+            if (cantAzucar != 0) 
+            { 
+                WriteLine("Azucar 15$   " + cantAzucar*azucar);
+            }
+
+            if (cantBanana !=0) 
+            {
+                WriteLine("Banana 20$   " + cantBanana*banana);
+
+            }
+
+            if (cantCebolla != 0) 
+            {
+                WriteLine("Cebolla 5$   " + cantCebolla * cebolla);
+            }
+
+            if (cantCerveza != 0) 
+            {
+                WriteLine("Cerveza 50$   " + cantCerveza * cerveza);
+            }
+
+            if (cantFresa != 0) 
+            {
+                WriteLine("Fresa 5$   " + cantFresa * fresa);
+
+            }
+
+            if (cantGatorade !=0)
+            {
+                WriteLine("Gatorade 60$   " + cantGatorade * gatorade);
+            }
+
+            if (cantGuineo != 0) 
+            {
+                WriteLine("Guineo 5$   " + cantGuineo * guineo);
+            }
+
+            if (cantJugo !=0) 
+            { 
+                WriteLine("Jugo 25$   " + cantJugo * jugo);
+            }
+
+            if (cantMaltamorena !=0) 
+            {
+                WriteLine("Malta Morena 50$   " + cantMaltamorena * maltamorena);
+            }
+
+            if (cantManzana != 0) 
+            {
+                WriteLine("Manzana 15$   " + cantManzana * manzana);
+            }
+
+            if (cantOregano != 0) 
+            {
+                WriteLine("Oregano 5$   " + cantOregano * oregano);
+
+            }
+
+            if (cantPapa != 0) 
+            {
+                WriteLine("Papa 25$   " + cantPapa * papa);
+            }
+
+            if (cantPimienta != 0) 
+            {
+                WriteLine("Pimienta 10$   " + cantPimienta * pimienta);
+            }
+
+
+
+
+        }
+
+
+
+
+        
 
     }
 
