@@ -27,6 +27,16 @@ namespace proyecto_final_2
         int cantSal = 0, cantPimienta = 0, cantAzucar = 0, cantOregano = 0, cantSalsa = 0;
         int cantTotal = 0;
 
+        /* VALIDACION cantViveres */
+        int VcantPlatanos = 0, VcantYuca = 0, VcantGuineo = 0, VcantPapa = 0, VcantYautia = 0;
+        /* VALIDACION cantBebidas */
+        int VcantJugo = 0, VcantSoda = 0, VcantGatorade = 0, VcantMaltamorena = 0, VcantCerveza = 0;
+        /* VALIDACION cantFrutas */
+        int VcantManzana = 0, VcantBanana = 0, VcantSandia = 0, VcantPiña = 0, VcantFresa = 0;
+        /* VALIDACION cantCondimentos */
+        int VcantSal = 0, VcantPimienta = 0, VcantAzucar = 0, VcantOregano = 0, VcantSalsa = 0;
+        int VcantTotal = 0;
+
         /*Dinero para pagar*/
         int cash = 0;
 
@@ -156,7 +166,18 @@ El total de su compra es: $" + total;
                 case 0:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de platanos que desea: ");
-                    cantPlatanos = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantPlatanos = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
+                 
+
                     total = total + (platanos * cantPlatanos);
                     RunViveres();
                     break;
@@ -164,7 +185,16 @@ El total de su compra es: $" + total;
                 case 1:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de yuca que desea: ");
-                    cantYuca = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantYuca = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (yuca * cantYuca);
                     RunViveres();
                     break;
@@ -172,7 +202,16 @@ El total de su compra es: $" + total;
                 case 2:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de guineos que desea: ");
-                    cantGuineo = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantGuineo = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (guineo * cantGuineo);
                     RunViveres();
                     break;
@@ -180,7 +219,16 @@ El total de su compra es: $" + total;
                 case 3:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de papas que desea: ");
-                    cantPapa = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantPapa = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (papa * cantPapa);
                     RunViveres();
                     break;
@@ -188,7 +236,16 @@ El total de su compra es: $" + total;
                 case 4:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de Yautias que desea: ");
-                    cantYautia = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantYautia = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (yautia * cantYautia);
                     RunViveres();
                     break;
@@ -229,7 +286,16 @@ El total de su compra es: $" + total;
                 case 0:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de jugos que desea: ");
-                    cantJugo = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantJugo = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (jugo * cantJugo);
                     RunBebidas();
                     break;
@@ -237,7 +303,16 @@ El total de su compra es: $" + total;
                 case 1:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de sodas que desea: ");
-                    cantSoda = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantSoda = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (soda * cantSoda);
                     RunBebidas();
                     break;
@@ -245,7 +320,17 @@ El total de su compra es: $" + total;
                 case 2:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de gatorades que desea: ");
-                    cantGatorade = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantGatorade = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
+
                     total = total + (gatorade * cantGatorade);
                     RunBebidas();
                     break;
@@ -253,14 +338,32 @@ El total de su compra es: $" + total;
                 case 3:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de maltamorenas que desea: ");
-                    cantMaltamorena = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantMaltamorena = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (maltamorena * cantMaltamorena); RunBebidas();
                     break;
                     ;
                 case 4:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de cervezas que desea: ");
-                    cantCerveza = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantCerveza = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (cerveza * cantCerveza);
                     RunBebidas();
                     break;
@@ -300,7 +403,17 @@ El total de su compra es: $" + total;
                 case 0:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de sales que desea: ");
-                    cantSal = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantSal = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
+
                     total = total + (sal * cantSal);
                     RunCondimentos();
                     break;
@@ -308,7 +421,16 @@ El total de su compra es: $" + total;
                 case 1:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de pimientas que desea: ");
-                    cantPimienta = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantPimienta = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (pimienta * cantPimienta);
                     RunCondimentos();
                     break;
@@ -316,7 +438,16 @@ El total de su compra es: $" + total;
                 case 2:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de azucares que desea: ");
-                    cantAzucar = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantAzucar = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (azucar * cantAzucar);
                     RunCondimentos();
                     break;
@@ -324,7 +455,16 @@ El total de su compra es: $" + total;
                 case 3:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de oreganos que desea: ");
-                    cantOregano = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantOregano = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (oregano * cantOregano);
                     RunCondimentos();
                     break;
@@ -332,7 +472,16 @@ El total de su compra es: $" + total;
                 case 4:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de salsas que desea: ");
-                    cantSalsa = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantSalsa = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (salsa * cantSalsa);
                     RunCondimentos();
                     break;
@@ -372,7 +521,16 @@ El total de su compra es: $" + total;
                 case 0:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de mazanas que desea: ");
-                    cantManzana = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantManzana = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (manzana * cantManzana);
                     RunFrutas();
                     break;
@@ -380,7 +538,16 @@ El total de su compra es: $" + total;
                 case 1:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de bananas que desea: ");
-                    cantBanana = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantBanana = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (banana * cantBanana);
                     RunFrutas();
                     break;
@@ -388,7 +555,16 @@ El total de su compra es: $" + total;
                 case 2:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de sandías que desea: ");
-                    cantSandia = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantSandia = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (sandia * cantSandia);
                     RunFrutas();
                     break;
@@ -396,7 +572,16 @@ El total de su compra es: $" + total;
                 case 3:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de piñas que desea: ");
-                    cantPiña = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantPiña = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (piña * cantPiña);
                     RunFrutas();
                     break;
@@ -404,7 +589,16 @@ El total de su compra es: $" + total;
                 case 4:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese la cantidad de fresas que desea: ");
-                    cantFresa = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        cantFresa = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    catch
+                    {
+                        WriteLine("Ingrese un valor valido");
+                        ReadKey();
+                    }
                     total = total + (fresa * cantFresa);
                     RunFrutas();
                     break;
@@ -465,6 +659,13 @@ El total de su compra es: $" + total;
             Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             Console.WriteLine($"|{" Producto",-20} {"|",0} {"Precio",-13} {"|",0} {"Cantidad",-12} {"|",0} {"Total",-15}|");
             Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            if (total == 0)
+            {
+                WriteLine("Aun no realizas ninguna compra, Pulsa cualquier tecla para volver al Menu pricipal...");
+                ReadKey();
+                Start();
+            }
+
             if (cantPlatanos != 0)
             {
                 Console.WriteLine($"|{" Platanos",-20} {"|",-1} {"$25",-13} {"|",-1} {cantPlatanos,-12} {"|",-1} ${cantPlatanos * platanos,-14}|");
@@ -589,7 +790,17 @@ El total de su compra es: $" + total;
             WriteLine("");
             Console.WriteLine($"El total general de su compra es: ${total}");
             Write("Con cuanto desea pagar: ");
-            cash = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                cash = Convert.ToInt32(Console.ReadLine());
+            }
+
+            catch
+            {
+                WriteLine($"El monto de ${cash} no es suficiente para realizar la compra.");
+                ReadKey();
+            }
+           
 
             if (cash < total)
             {
@@ -598,7 +809,18 @@ El total de su compra es: $" + total;
                 WriteLine("Pulse cualquier tecla para reintentar el pago...");
                 Console.ReadKey();
                 Console.Clear();
-                goto Pagar;
+                Factura();
+                
+            }
+
+            if (cash == null)
+            {
+                WriteLine("");
+                Console.WriteLine($"El monto de ${cash} no es suficiente para realizar la compra.");
+                WriteLine("Pulse cualquier tecla para reintentar el pago...");
+                Console.ReadKey();
+                Console.Clear();
+                Factura();
             }
 
             else
@@ -608,16 +830,44 @@ El total de su compra es: $" + total;
                 WriteLine("Pulse cualquier tecla para volver al menu principal...");
                 total = 0;
                 Console.ReadKey();
+                limpiarfactura();
                 RunMainMenu();
             }
 
+
+           
+
+            
+
+
+        }
+
+        private void limpiarfactura()
+        {
+            /* cantViveres */
+            cantPlatanos = 0; cantYuca = 0; cantGuineo = 0; cantPapa = 0; cantYautia = 0;
+            /* cantBebidas */
+            cantJugo = 0; cantSoda = 0; cantGatorade = 0; cantMaltamorena = 0; cantCerveza = 0;
+            /* cantFrutas */
+            cantManzana = 0; cantBanana = 0; cantSandia = 0; cantPiña = 0; cantFresa = 0;
+            /* cantCondimentos */
+            cantSal = 0; cantPimienta = 0; cantAzucar = 0; cantOregano = 0; cantSalsa = 0;
+            cantTotal = 0;
+
+            /*Dinero para pagar*/
+            cash = 0;
+
+            Start();
 
         }
 
 
 
 
-        
+
+
+
+
 
     }
 
