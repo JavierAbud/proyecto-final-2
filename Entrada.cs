@@ -27,15 +27,15 @@ namespace proyecto_final_2
         int cantSal = 0, cantPimienta = 0, cantAzucar = 0, cantOregano = 0, cantSalsa = 0;
         int cantTotal = 0;
 
-        /* VALIDACION cantViveres */
-        int VcantPlatanos = 0, VcantYuca = 0, VcantGuineo = 0, VcantPapa = 0, VcantYautia = 0;
-        /* VALIDACION cantBebidas */
-        int VcantJugo = 0, VcantSoda = 0, VcantGatorade = 0, VcantMaltamorena = 0, VcantCerveza = 0;
-        /* VALIDACION cantFrutas */
-        int VcantManzana = 0, VcantBanana = 0, VcantSandia = 0, VcantPiña = 0, VcantFresa = 0;
-        /* VALIDACION cantCondimentos */
-        int VcantSal = 0, VcantPimienta = 0, VcantAzucar = 0, VcantOregano = 0, VcantSalsa = 0;
-        int VcantTotal = 0;
+        ///* VALIDACION cantViveres */
+        //int VcantPlatanos = 0, VcantYuca = 0, VcantGuineo = 0, VcantPapa = 0, VcantYautia = 0;
+        ///* VALIDACION cantBebidas */
+        //int VcantJugo = 0, VcantSoda = 0, VcantGatorade = 0, VcantMaltamorena = 0, VcantCerveza = 0;
+        ///* VALIDACION cantFrutas */
+        //int VcantManzana = 0, VcantBanana = 0, VcantSandia = 0, VcantPiña = 0, VcantFresa = 0;
+        ///* VALIDACION cantCondimentos */
+        //int VcantSal = 0, VcantPimienta = 0, VcantAzucar = 0, VcantOregano = 0, VcantSalsa = 0;
+        //int VcantTotal = 0;
 
         /*Dinero para pagar*/
         int cash = 0;
@@ -156,7 +156,7 @@ El total de su compra es: $" + total;
 
             Console.WriteLine("");
 
-            string[] Options = { "Platanos = $25", "Yuca = $30", "Guineo = $5", "Papa = $25", "Yautia = $5", "* Volver al menu de clasificaciones *" };
+            string[] Options = { "Platanos = $25", "Yuca = $30", "Guineo = $5", "Papa = $25", "Yautia = $5", "* Volver al menu de productos *" };
 
             Viveres MenuDeViveres = new Viveres(Prompt, Options);
             int SelectedIndex = MenuDeViveres.RunViveres();
@@ -173,7 +173,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                  
@@ -192,7 +194,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (yuca * cantYuca);
@@ -209,7 +213,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (guineo * cantGuineo);
@@ -226,7 +232,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (papa * cantPapa);
@@ -243,7 +251,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (yautia * cantYautia);
@@ -276,7 +286,7 @@ El total de su compra es: $" + total;
 
             Console.WriteLine("");
 
-            string[] Options = { "Jugo = $25", "Soda = $15", "Gatorade = $60", "Maltamorena = $50", "Cerveza = $50", "* Volver al menu de clasificaciones *" };
+            string[] Options = { "Jugo = $25", "Soda = $15", "Gatorade = $60", "Maltamorena = $50", "Cerveza = $50", "* Volver al menu de productos *" };
 
             Bebidas MenuDeBebidas = new Bebidas(Prompt, Options);
             int SelectedIndex = MenuDeBebidas.RunBebidas();
@@ -293,7 +303,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (jugo * cantJugo);
@@ -310,7 +322,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (soda * cantSoda);
@@ -327,7 +341,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
 
@@ -345,7 +361,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (maltamorena * cantMaltamorena); RunBebidas();
@@ -361,7 +379,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (cerveza * cantCerveza);
@@ -393,7 +413,7 @@ El total de su compra es: $" + total;
 
             Console.WriteLine("");
 
-            string[] Options = { "Sal = $10", "Pimienta = $10", "Azucar = $15", "Oregano = $5", "Salsa = $20", "* Volver al menu de clasificaciones *" };
+            string[] Options = { "Sal = $10", "Pimienta = $10", "Azucar = $15", "Oregano = $5", "Salsa = $20", "* Volver al menu de productos *" };
 
             Frutas MenuDeFrutas = new Frutas(Prompt, Options);
             int SelectedIndex = MenuDeFrutas.RunFrutas();
@@ -410,7 +430,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
 
@@ -428,7 +450,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (pimienta * cantPimienta);
@@ -445,7 +469,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (azucar * cantAzucar);
@@ -462,7 +488,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (oregano * cantOregano);
@@ -479,7 +507,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (salsa * cantSalsa);
@@ -511,7 +541,7 @@ El total de su compra es: $" + total;
 
             Console.WriteLine("");
 
-            string[] Options = { "Manzana = $15", "Banana = $20", "Sandía = $25", "Piña = $15", "Fresa = $5", "* Volver al menu de clasificaciones *" };
+            string[] Options = { "Manzana = $15", "Banana = $20", "Sandía = $25", "Piña = $15", "Fresa = $5", "* Volver al menu de productos *" };
 
             Frutas MenuDeFrutas = new Frutas(Prompt, Options);
             int SelectedIndex = MenuDeFrutas.RunFrutas();
@@ -528,7 +558,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (manzana * cantManzana);
@@ -545,7 +577,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (banana * cantBanana);
@@ -562,7 +596,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (sandia * cantSandia);
@@ -579,7 +615,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (piña * cantPiña);
@@ -596,7 +634,9 @@ El total de su compra es: $" + total;
 
                     catch
                     {
-                        WriteLine("Ingrese un valor valido");
+                        WriteLine("");
+                        WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                        WriteLine("Pulse cualquier tecla para reintentar...");
                         ReadKey();
                     }
                     total = total + (fresa * cantFresa);
@@ -655,13 +695,15 @@ El total de su compra es: $" + total;
         private void Factura()
         {
             Clear();
-        Pagar:
+        
             Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             Console.WriteLine($"|{" Producto",-20} {"|",0} {"Precio",-13} {"|",0} {"Cantidad",-12} {"|",0} {"Total",-15}|");
             Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             if (total == 0)
             {
-                WriteLine("Aun no realizas ninguna compra, Pulsa cualquier tecla para volver al Menu pricipal...");
+                WriteLine("");
+                WriteLine("Aun no ha realizado ninguna compra.");
+                WriteLine("Pulsa cualquier tecla para volver al menu principal...");
                 ReadKey();
                 Start();
             }
@@ -790,17 +832,27 @@ El total de su compra es: $" + total;
             WriteLine("");
             Console.WriteLine($"El total general de su compra es: ${total}");
             Write("Con cuanto desea pagar: ");
+
             try
             {
                 cash = Convert.ToInt32(Console.ReadLine());
             }
-
+            
             catch
             {
-                WriteLine($"El monto de ${cash} no es suficiente para realizar la compra.");
+                WriteLine("");
+                WriteLine("CARACTERES INCORRECTOS... Debe ingresar un valor numerico");
+                WriteLine("Pulse cualquier tecla para reintentar...");
                 ReadKey();
-            }
-           
+                Factura();
+            }                        
+
+            //catch
+            //{
+            //    WriteLine($"El monto de ${cash} no es suficiente para realizar la compra.");
+            //    ReadKey();
+            //}
+
 
             if (cash < total)
             {
@@ -813,15 +865,15 @@ El total de su compra es: $" + total;
                 
             }
 
-            if (cash == null)
-            {
-                WriteLine("");
-                Console.WriteLine($"El monto de ${cash} no es suficiente para realizar la compra.");
-                WriteLine("Pulse cualquier tecla para reintentar el pago...");
-                Console.ReadKey();
-                Console.Clear();
-                Factura();
-            }
+            //if (cash == null)
+            //{
+            //    WriteLine("");
+            //    Console.WriteLine($"El monto de ${cash} no es suficiente para realizar la compra.");
+            //    WriteLine("Pulse cualquier tecla para reintentar el pago...");
+            //    Console.ReadKey();
+            //    Console.Clear();
+            //    Factura();
+            //}
 
             else
             {
@@ -832,12 +884,7 @@ El total de su compra es: $" + total;
                 Console.ReadKey();
                 limpiarfactura();
                 RunMainMenu();
-            }
-
-
-           
-
-            
+            }                    
 
 
         }
