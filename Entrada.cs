@@ -8,7 +8,7 @@ namespace proyecto_final_2
     class Entrada
     {
         /* Viveres */
-        Int32 platanos = 25, yuca = 30, guineo = 5, papa = 25, cebolla = 5;
+        Int32 platanos = 25, yuca = 30, guineo = 5, papa = 25, yautia = 5;
         /* Bebidas */
         Int32 jugo = 25, soda = 15, gatorade = 60, maltamorena = 50, cerveza = 50;
         /* Frutas */
@@ -18,7 +18,7 @@ namespace proyecto_final_2
         Int32 total = 0;
 
         /* cantViveres */
-        int cantPlatanos = 0, cantYuca = 0, cantGuineo = 0, cantPapa = 0, cantCebolla = 0;
+        int cantPlatanos = 0, cantYuca = 0, cantGuineo = 0, cantPapa = 0, cantYautia = 0;
         /* cantBebidas */
         int cantJugo = 0, cantSoda = 0, cantGatorade = 0, cantMaltamorena = 0, cantCerveza = 0;
         /* cantFrutas */
@@ -26,6 +26,9 @@ namespace proyecto_final_2
         /* cantCondimentos */
         int cantSal = 0, cantPimienta = 0, cantAzucar = 0, cantOregano = 0, cantSalsa = 0;
         int cantTotal = 0;
+
+        /*Dinero para pagar*/
+        int cash = 0;
 
         
 
@@ -42,6 +45,7 @@ namespace proyecto_final_2
         //Menu principal
         private void RunMainMenu()
         {
+            
 
             string Prompt = @" 
 
@@ -56,7 +60,7 @@ namespace proyecto_final_2
 Bienvenido a nuestro colmado, Como podemos ayudarle?
 (Use las teclas de direccion para navegar por el menu y selecciona con la tecla Enter.)
 ";
-            string[] Options = { "COMPRAR", "SALIR","Pagar" };
+            string[] Options = { "COMPRAR", "FACTURA", "SALIR" };
 
             Menu MainMenu = new Menu(Prompt, Options);
             int SelectedIndex = MainMenu.Run();
@@ -67,12 +71,12 @@ Bienvenido a nuestro colmado, Como podemos ayudarle?
                     Comprar();
                     break;
                 case 1:
-                    Salir();
-                    break;
-
-                case 2:
                     Factura();
                     break;
+                case 2:
+                    Salir();                    
+                    break;               
+
                 default:
                     break;
             }
@@ -142,7 +146,7 @@ El total de su compra es: $" + total;
 
             Console.WriteLine("");
 
-            string[] Options = { "Platanos = $25", "Yuca = $30", "Guineo = $5", "Papa = $25", "Cebolla = $5", "* Volver al menu de clasificaciones *" };
+            string[] Options = { "Platanos = $25", "Yuca = $30", "Guineo = $5", "Papa = $25", "Yautia = $5", "* Volver al menu de clasificaciones *" };
 
             Viveres MenuDeViveres = new Viveres(Prompt, Options);
             int SelectedIndex = MenuDeViveres.RunViveres();
@@ -183,9 +187,9 @@ El total de su compra es: $" + total;
 
                 case 4:
                     Console.WriteLine("");
-                    Console.WriteLine("Ingrese la cantidad de cebollas que desea: ");
-                    cantCebolla = Convert.ToInt32(Console.ReadLine());
-                    total = total + (cebolla * cantCebolla);
+                    Console.WriteLine("Ingrese la cantidad de Yautias que desea: ");
+                    cantYautia = Convert.ToInt32(Console.ReadLine());
+                    total = total + (yautia * cantYautia);
                     RunViveres();
                     break;
 
@@ -448,85 +452,164 @@ El total de su compra es: $" + total;
             RunFrutas();
         }
 
+        //private void Pagar()
+        //{
+        
+        //}
+
 
         private void Factura()
         {
             Clear();
+        Pagar:
+            Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            Console.WriteLine($"|{" Producto",-20} {"|",0} {"Precio",-13} {"|",0} {"Cantidad",-12} {"|",0} {"Total",-15}|");
+            Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             if (cantPlatanos != 0)
             {
+                Console.WriteLine($"|{" Platanos",-20} {"|",-1} {"$25",-13} {"|",-1} {cantPlatanos,-12} {"|",-1} ${cantPlatanos * platanos,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            }            
 
-              WriteLine("Platanos 25$   ");
-            }
-
-            if (cantAzucar != 0) 
-            { 
-                WriteLine("Azucar 15$   " + cantAzucar*azucar);
-            }
-
-            if (cantBanana !=0) 
+            if (cantYuca != 0)
             {
-                WriteLine("Banana 20$   " + cantBanana*banana);
-
+                Console.WriteLine($"|{" Yucas",-20} {"|",-1} {"$30",-13} {"|",-1} {cantYuca,-12} {"|",-1} ${cantYuca * yuca,-14}|");                
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             }
 
-            if (cantCebolla != 0) 
+             if (cantGuineo != 0)
             {
-                WriteLine("Cebolla 5$   " + cantCebolla * cebolla);
+                Console.WriteLine($"|{" Guineos",-20} {"|",-1} {"$5",-13} {"|",-1} {cantGuineo,-12} {"|",-1} ${cantGuineo * guineo,-14}|");                
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             }
 
-            if (cantCerveza != 0) 
+             if (cantPapa != 0)
             {
-                WriteLine("Cerveza 50$   " + cantCerveza * cerveza);
+                Console.WriteLine($"|{" Papas",-20} {"|",-1} {"$25",-13} {"|",-1} {cantPapa,-12} {"|",-1} ${cantPapa * papa,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             }
 
-            if (cantFresa != 0) 
+             if (cantYautia != 0)
             {
-                WriteLine("Fresa 5$   " + cantFresa * fresa);
-
+                Console.WriteLine($"|{" Yautias",-20} {"|",-1} {"$5",-13} {"|",-1} {cantYautia,-12} {"|",-1} ${cantYautia * yautia,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             }
 
-            if (cantGatorade !=0)
+             if (cantJugo != 0)
             {
-                WriteLine("Gatorade 60$   " + cantGatorade * gatorade);
+                Console.WriteLine($"|{" Jugos",-20} {"|",-1} {"$25",-13} {"|",-1} {cantJugo,-12} {"|",-1} ${cantJugo * jugo,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             }
 
-            if (cantGuineo != 0) 
+             if (cantSoda != 0)
             {
-                WriteLine("Guineo 5$   " + cantGuineo * guineo);
+                Console.WriteLine($"|{" Sodas",-20} {"|",-1} {"$15",-13} {"|",-1} {cantSoda,-12} {"|",-1} ${cantSoda * soda,-14}|");                
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             }
 
-            if (cantJugo !=0) 
-            { 
-                WriteLine("Jugo 25$   " + cantJugo * jugo);
-            }
-
-            if (cantMaltamorena !=0) 
+             if (cantGatorade != 0)
             {
-                WriteLine("Malta Morena 50$   " + cantMaltamorena * maltamorena);
-            }
+                Console.WriteLine($"|{" Gatorades",-20} {"|",-1} {"$60",-13} {"|",-1} {cantGatorade,-12} {"|",-1} ${cantGatorade * gatorade,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            }            
 
-            if (cantManzana != 0) 
+             if (cantMaltamorena != 0)
             {
-                WriteLine("Manzana 15$   " + cantManzana * manzana);
+                Console.WriteLine($"|{" Malta Morena",-20} {"|",-1} {"$50",-13} {"|",-1} {cantMaltamorena,-12} {"|",-1} ${cantMaltamorena * maltamorena,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             }
 
-            if (cantOregano != 0) 
+             if (cantCerveza != 0)
             {
-                WriteLine("Oregano 5$   " + cantOregano * oregano);
-
+                Console.WriteLine($"|{" Cervezas",-20} {"|",-1} {"$50",-13} {"|",-1} {cantCerveza,-12} {"|",-1} ${cantCerveza * cerveza,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             }
 
-            if (cantPapa != 0) 
+             if (cantManzana != 0)
             {
-                WriteLine("Papa 25$   " + cantPapa * papa);
+                Console.WriteLine($"|{" Manzanas",-20} {"|",-1} {"$15",-13} {"|",-1} {cantManzana,-12} {"|",-1} ${cantManzana * manzana,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             }
+
+             if (cantBanana != 0)
+            {
+                Console.WriteLine($"|{" Bananas",-20} {"|",-1} {"$20",-13} {"|",-1} {cantBanana,-12} {"|",-1} ${cantBanana * banana,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            }
+
+            if (cantPiña != 0)
+            {
+                Console.WriteLine($"|{" Piñas",-20} {"|",-1} {"$15",-13} {"|",-1} {cantPiña,-12} {"|",-1} ${cantPiña * piña,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            }
+
+            if (cantSandia != 0)
+            {
+                Console.WriteLine($"|{" Sandias",-20} {"|",-1} {"$25",-13} {"|",-1} {cantSandia,-12} {"|",-1} ${cantSandia * sandia,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            }
+
+             if (cantFresa != 0)
+            {
+                Console.WriteLine($"|{" Fresas",-20} {"|",-1} {"$5",-13} {"|",-1} {cantFresa,-12} {"|",-1} ${cantFresa * fresa,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            }
+
+             if (cantSal != 0)
+            {
+                Console.WriteLine($"|{" Sales",-20} {"|",-1} {"$10",-13} {"|",-1} {cantSal,-12} {"|",-1} ${cantSal * sal,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            }
+
+             if (cantAzucar != 0) 
+            {
+                Console.WriteLine($"|{" Azucares",-20} {"|",-1} {"$15",-13} {"|",-1} {cantAzucar,-12} {"|",-1} ${cantAzucar * azucar,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            }            
+
+             if (cantOregano != 0) 
+            {
+                Console.WriteLine($"|{" Oreganos",-20} {"|",-1} {"$5",-13} {"|",-1} {cantOregano,-12} {"|",-1} ${cantOregano * oregano,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            }            
 
             if (cantPimienta != 0) 
             {
-                WriteLine("Pimienta 10$   " + cantPimienta * pimienta);
+                Console.WriteLine($"|{" Pimientas",-20} {"|",-1} {"$10",-13} {"|",-1} {cantPimienta,-12} {"|",-1} ${cantPimienta * pimienta,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
             }
 
+            if (cantSalsa != 0)
+            {
+                Console.WriteLine($"|{" Salsas",-20} {"|",-1} {"$20",-13} {"|",-1} {cantSalsa,-12} {"|",-1} ${cantSalsa * salsa,-14}|");
+                Console.WriteLine("|—————————————————————————————————————————————————————————————————————|");
+            }
 
+        
+            WriteLine("");
+            Console.WriteLine($"El total general de su compra es: ${total}");
+            Write("Con cuanto desea pagar: ");
+            cash = Convert.ToInt32(Console.ReadLine());
+
+            if (cash < total)
+            {
+                WriteLine("");
+                Console.WriteLine($"El monto de ${cash} no es suficiente para realizar la compra.");
+                WriteLine("Pulse cualquier tecla para reintentar el pago...");
+                Console.ReadKey();
+                Console.Clear();
+                goto Pagar;
+            }
+
+            else
+            {
+                WriteLine("");
+                Console.WriteLine($"Su cambio es de: ${cash - total}");
+                WriteLine("Pulse cualquier tecla para volver al menu principal...");
+                total = 0;
+                Console.ReadKey();
+                RunMainMenu();
+            }
 
 
         }
